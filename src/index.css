@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Core Brand Accents */
+  --color-primary: #ddb7ff;
+  --color-on-primary: #490080;
+  --color-primary-container: #b76dff;
+  --color-on-primary-container: #400071;
+  --color-primary-accent: #a855f7;
+  --color-primary-bright: #c084fc;
+
+  --color-secondary: #7bd0ff;
+  --color-on-secondary: #00354a;
+  --color-secondary-container: #00a6e0;
+  --color-on-secondary-container: #00374d;
+  --color-secondary-accent: #38bdf8;
+
+  --color-tertiary: #fbabff;
+  --color-on-tertiary: #580065;
+  --color-tertiary-container: #e14ef6;
+  --color-on-tertiary-container: #4d0059;
+  --color-tertiary-accent: #d946ef;
+
+  /* Surfaces & Backgrounds */
+  --color-background: #051424;
+  --color-on-background: #d4e4fa;
+  --color-surface: #051424;
+  --color-on-surface: #d4e4fa;
+  --color-on-surface-variant: #cfc2d6;
+  --color-surface-dim: #051424;
+  --color-surface-bright: #2c3a4c;
+  --color-surface-container-lowest: #010f1f;
+  --color-surface-container-low: #0d1c2d;
+  --color-surface-container: #122131;
+  --color-surface-container-high: #1c2b3c;
+  --color-surface-container-highest: #273647;
+
+  /* Outlines & Borders */
+  --color-outline: #988d9f;
+  --color-outline-variant: #4d4354;
+
+  /* Status & Alerts */
+  --color-error: #ffb4ab;
+  --color-on-error: #690005;
+  --color-error-container: #93000a;
+  --color-on-error-container: #ffdad6;
+}
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #051424;
+    color: #d4e4fa;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+/* Custom glow and backdrop effects */
+.glow-primary {
+  box-shadow: 0 0 24px -2px rgba(168, 85, 247, 0.4), 0 0 1px 1px rgba(192, 132, 252, 0.6);
+}
+
+.glow-secondary {
+  box-shadow: 0 0 20px -2px rgba(56, 189, 248, 0.35);
+}
+
+.glow-tertiary {
+  box-shadow: 0 0 24px -1px rgba(217, 70, 239, 0.45);
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #051424;
+}
+::-webkit-scrollbar-thumb {
+  background: #1c2b3c;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a855f7;
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes orbit-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-orbit {
+  animation: orbit-rotate 40s linear infinite;
+}
+
+@keyframes radar-sweep {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-radar {
+  animation: radar-sweep 5s linear infinite;
+}
+
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(28, 43, 60, 0.4) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(28, 43, 60, 0.4) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+.bg-dot-pattern {
+  background-image: radial-gradient(rgba(123, 208, 255, 0.2) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(1000%); }
+}
+
+.animate-scanline {
+  animation: scanline 8s linear infinite;
+}
